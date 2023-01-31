@@ -21,11 +21,10 @@ router.post("/checkout", body('name').isLength({ min: 2, max: 60 }), body('phone
     companyData: req.body,
   }
   checkoutDataArray[data.id] = data;
-  console.log(checkoutDataArray);
   
   const msg = {
     status: "200 OK",
-    message: "Created new checkout with id as : " + data.id
+    message: "New checkout created with id : " + data.id
   };
   res.json(msg);
 });
